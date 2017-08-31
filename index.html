@@ -26,6 +26,29 @@
 
     <title>Software Developer Intern Portfolio</title>
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{latest-api-version}'
+    });
+    FB.AppEvents.logPageView();
+       FB.getLoginStatus(function(response) {
+    	statusChangeCallback(response);
+    	cosole.log(response);
+	});
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 </head>
 
 <body>
@@ -46,7 +69,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-           <li>
+ <!--           <li>
                         <a href="index.html" >Home</a>
                     </li>
                     <li>
@@ -57,7 +80,12 @@
                     </li>
                     <li>
                         <a href="contact.html">Contact</a>
-                    </li>
+                    </li> -->
+                    
+<fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
